@@ -2,24 +2,24 @@ export class ListagemFilme
 {
     id: number;
     titulo: string;
-    sinopse: string;
-    urlPoster: string;
+    resumo: string;
     urlSlide: string;
+    urlPoster: string;
     readonly urlDetalhes: string;
   
     constructor(
       id: number,
       titulo: string,
-      sinopse: string,
-      urlPoster: string,
-      urlSlide: string
+      resumo: string,
+      linkPoster: string,
+      linkSlide: string
     ) 
     {
       this.id = id;
       this.titulo = titulo;
-      this.sinopse = sinopse;
-      this.urlPoster = "https://image.tmdb.org/t/p/original" + urlPoster;
-      this.urlSlide = "https://image.tmdb.org/t/p/original" + urlSlide;
+      this.resumo = resumo;
+      this.urlPoster = "https://image.tmdb.org/t/p/original" + linkPoster;
+      this.urlSlide = "https://image.tmdb.org/t/p/original" + linkSlide;
       this.urlDetalhes = `detalhes.html?id=${id}`;
     }
   }

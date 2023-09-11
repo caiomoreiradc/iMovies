@@ -4,13 +4,10 @@ export class DetalhesFilme
     titulo: string;
     sinopse: string;
     dataLancamento: string;
-  
     urlPoster: string;
     urlSlide: string;
-  
     mediaNota: number;
     contagemVotos: string;
-  
     generos: string[];
   
     constructor(
@@ -18,15 +15,13 @@ export class DetalhesFilme
       titulo: string,
       sinopse: string,
       dataLancamento: string,
-  
       urlPoster: string,
       urlSlide: string,
-  
       mediaNota: number,
       contagemVotos: string,
-  
       generos: string[]
     ) 
+    
     {
       this.id = id;
       this.titulo = titulo;

@@ -63,7 +63,7 @@ export class VisualizarDetalhesFilme {
   }
 
   private substituirTrailer(trailer: TrailerFilme): void {
-    this.trailer.src = trailer.sourceUrl;
+    this.trailer.src = trailer.url;
   }
 
   private substituirElementos(filme: DetalhesFilme): void {
@@ -76,7 +76,7 @@ export class VisualizarDetalhesFilme {
 
     filme.generos.forEach((genero) => {
       const badge = document.createElement("span");
-      badge.className = "badge rounded-pill fs-5 px-4 py-2 bg-danger text-dark";
+      badge.className = "badge rounded-pill fs-5 px-4 py-2 bg-dark text-white";
       badge.textContent = genero;
       this.generos.appendChild(badge);
     });

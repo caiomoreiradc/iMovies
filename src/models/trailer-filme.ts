@@ -1,15 +1,15 @@
 export class TrailerFilme
 {
     id: number;
-    sourceUrl: string;
+    url: string;
   
     constructor(
       id: number,
-      sourceUrl: string
+      url: string
   
     )
     {
       this.id = id;
-      this.sourceUrl = sourceUrl;
+      this.url = url;
     }
   }

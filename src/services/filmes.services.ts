@@ -23,10 +23,9 @@ export class FilmeService {
         const data = await response.json();
         return this.MapearFilmes(data);
       } else {
-        throw new Error("Ocorreu erro ao tentar obter dados requisitados");
+        throw new Error("Erro ao tentar obter dados requisitados");
       }
     } catch (error: any) {
-      // <- Declare explicitamente o tipo da variável error
       throw new Error(`Erro na solicitação: ${(error as Error).message}`);
     }
   }
@@ -47,10 +46,9 @@ export class FilmeService {
         const data = await response.json();
         return this.MapearFilmes(data);
       } else {
-        throw new Error("Ocorreu erro ao tentar obter dados requisitados");
+        throw new Error("Erro ao tentar obter dados requisitados");
       }
     } catch (error: any) {
-      // <- Declare explicitamente o tipo da variável error
       throw new Error(`Erro na solicitação: ${(error as Error).message}`);
     }
   }
@@ -71,10 +69,9 @@ export class FilmeService {
         const data = await response.json();
         return this.MapearFilmes(data);
       } else {
-        throw new Error("Ocorreu erro ao tentar obter dados requisitados");
+        throw new Error("Erro ao tentar obter dados requisitados");
       }
     } catch (error: any) {
-      // <- Declare explicitamente o tipo da variável error
       throw new Error(`Erro na solicitação: ${(error as Error).message}`);
     }
   }
@@ -98,7 +95,7 @@ export class FilmeService {
   private processarResposta(res: Response): any {
     if (res.ok) return res.json();
 
-    throw new Error("Ocorreu erro ao tentar obter os dados requisitados.");
+    throw new Error("Erro ao tentar obter os dados requisitados.");
   }
 
   private obterHeaders() {
@@ -107,17 +104,9 @@ export class FilmeService {
       headers: {
         accept: "application/json",
         Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2YTAzMzM1YjlmMTAxYjQzODNhOWQ4ZjAxNmRiNGM1ZiIsInN1YiI6IjY0YWVlNjliNjZhMGQzMDBjNjcwZjdlNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.maqe-EQttCKGgwuXNLSalnq-BseNByKVa64rRPW8EGI",
+          "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzMDJlZGY5NmU1MTI4YWM0ZjY1YjRjNDE0NWFhY2U4OCIsInN1YiI6IjY0ZmU2Zjk0ZmE0MDQ2MDBlMTdlYTgwNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.nN0HkG0RZoHyNhLxSvK6obVCgXNNFNkpDwLMdf8p_ig",
       },
     };
-  }
-
-  private mapearTrailersFilme(obj: any): TrailerFilme {
-    console.log(obj);
-    return new TrailerFilme(
-      obj.id,
-      `https://www.youtube.com/embed/${obj.results[0].key}`
-    );
   }
 
   private mapearDetalhesFilme(obj: any): DetalhesFilme {
@@ -133,6 +122,14 @@ export class FilmeService {
       obj.genres.map((genero: any) => genero.name),
     );
   }
+  private mapearTrailersFilme(obj: any): TrailerFilme {
+    console.log(obj);
+    return new TrailerFilme(
+      obj.id,
+      `https://www.youtube.com/embed/${obj.results[0].key}`
+    );
+  }
+
 
   private MapearFilmes(objetos: any): ListagemFilme[] {
     return objetos.results.map((obj: any) => {

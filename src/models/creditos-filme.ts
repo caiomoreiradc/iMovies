@@ -4,7 +4,7 @@ export class CreditosFilme
     ordem:number;
     nome: string;
     departamento: string;
-    caminho_imagem:string;
+    caminhoImagem:string;
     personagem:string;
   
     constructor(
@@ -20,7 +20,7 @@ export class CreditosFilme
       this.ordem = ordem;
       this.nome = nome,
       this.departamento = departamento,
-      this.caminho_imagem = caminho_imagem,
+      this.caminhoImagem = caminho_imagem,
       this.personagem = personagem
   
   

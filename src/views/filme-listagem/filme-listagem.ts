@@ -30,7 +30,7 @@ export class VisualizarListagemFilmes {
   private filtrarPorPopularidade(filmes: ListagemFilme[]): void{
     const lblTitulo = document.createElement("h2");
     lblTitulo.textContent = "Filmes Em Alta";
-    lblTitulo.classList.add("fs-1", "text-warning");
+    lblTitulo.classList.add("fs-1", "text-light");
 
     const linhaCards = document.createElement("div");
     linhaCards.classList.add("row", "g-3");
@@ -63,7 +63,7 @@ export class VisualizarListagemFilmes {
         const lblTituloFilme = document.createElement("a");
         lblTituloFilme.classList.add(
           "fs-5",
-          "link-warning",
+          "link-light",
           "text-decoration-none"
         );
         lblTituloFilme.textContent = filme.titulo;
@@ -81,7 +81,7 @@ export class VisualizarListagemFilmes {
   private exibirLancamentos(filmes: ListagemFilme[]): void{
     const lblTitulo = document.createElement("h2");
     lblTitulo.textContent = "Lançamentos";
-    lblTitulo.classList.add("fs-1", "text-warning");
+    lblTitulo.classList.add("fs-1", "text-white");
 
     const linhaCards = document.createElement("div");
     linhaCards.classList.add("row", "g-3");
@@ -114,7 +114,7 @@ export class VisualizarListagemFilmes {
         const lblTituloFilme = document.createElement("a");
         lblTituloFilme.classList.add(
           "fs-5",
-          "link-warning",
+          "link-light",
           "text-decoration-none"
         );
         lblTituloFilme.textContent = filme.titulo;
@@ -165,7 +165,7 @@ export class VisualizarListagemFilmes {
         const lblTituloFilme = document.createElement("a");
         lblTituloFilme.classList.add(
           "fs-5",
-          "link-warning",
+          "link-light",
           "text-decoration-none"
         );
         lblTituloFilme.textContent = filme.titulo;
